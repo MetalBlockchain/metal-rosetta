@@ -1,7 +1,7 @@
 package mapper
 
 import (
-	corethTypes "github.com/ava-labs/coreth/core/types"
+	corethTypes "github.com/MetalBlockchain/coreth/core/types"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
 

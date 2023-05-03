@@ -3,16 +3,16 @@ package cchainatomictx
 import (
 	"errors"
 
-	"github.com/ava-labs/avalanchego/codec"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/hashing"
-	"github.com/ava-labs/coreth/plugin/evm"
+	"github.com/MetalBlockchain/metalgo/codec"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/utils/hashing"
+	"github.com/MetalBlockchain/coreth/plugin/evm"
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	cmapper "github.com/ava-labs/avalanche-rosetta/mapper/cchainatomictx"
-	"github.com/ava-labs/avalanche-rosetta/service"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/common"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	cmapper "github.com/MetalBlockchain/metal-rosetta/mapper/cchainatomictx"
+	"github.com/MetalBlockchain/metal-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/common"
 )
 
 var (

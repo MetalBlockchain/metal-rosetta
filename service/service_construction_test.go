@@ -9,16 +9,16 @@ import (
 
 	"github.com/stretchr/testify/mock"
 
-	"github.com/ava-labs/coreth/interfaces"
+	"github.com/MetalBlockchain/coreth/interfaces"
 
 	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/stretchr/testify/assert"
 
-	rosConst "github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	mocks "github.com/ava-labs/avalanche-rosetta/mocks/client"
-	backendMocks "github.com/ava-labs/avalanche-rosetta/mocks/service"
+	rosConst "github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	mocks "github.com/MetalBlockchain/metal-rosetta/mocks/client"
+	backendMocks "github.com/MetalBlockchain/metal-rosetta/mocks/service"
 )
 
 const (
@@ -405,7 +405,7 @@ func TestPreprocessMetadata(t *testing.T) {
 	ctx := context.Background()
 	client := &mocks.Client{}
 	networkIdentifier := &types.NetworkIdentifier{
-		Network:    rosConst.FujiNetwork,
+		Network:    rosConst.TahoeNetwork,
 		Blockchain: "Avalanche",
 	}
 	skippedBackend := &backendMocks.ConstructionBackend{}

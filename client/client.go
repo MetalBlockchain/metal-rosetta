@@ -5,13 +5,13 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanchego/api"
-	"github.com/ava-labs/avalanchego/api/info"
-	"github.com/ava-labs/avalanchego/ids"
-	ethtypes "github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/interfaces"
-	"github.com/ava-labs/coreth/plugin/evm"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metalgo/api"
+	"github.com/MetalBlockchain/metalgo/api/info"
+	"github.com/MetalBlockchain/metalgo/ids"
+	ethtypes "github.com/MetalBlockchain/coreth/core/types"
+	"github.com/MetalBlockchain/coreth/interfaces"
+	"github.com/MetalBlockchain/coreth/plugin/evm"
 	ethcommon "github.com/ethereum/go-ethereum/common"
 )
 

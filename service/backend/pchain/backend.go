@@ -1,19 +1,19 @@
 package pchain
 
 import (
-	"github.com/ava-labs/avalanchego/codec"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
-	"github.com/ava-labs/avalanchego/vms/platformvm/blocks"
+	"github.com/MetalBlockchain/metalgo/codec"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/utils/crypto/secp256k1"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/blocks"
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/client"
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	"github.com/ava-labs/avalanche-rosetta/service"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/pchain/indexer"
+	"github.com/MetalBlockchain/metal-rosetta/client"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/pchain/indexer"
 
-	pmapper "github.com/ava-labs/avalanche-rosetta/mapper/pchain"
+	pmapper "github.com/MetalBlockchain/metal-rosetta/mapper/pchain"
 )
 
 var (

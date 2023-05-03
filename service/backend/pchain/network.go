@@ -5,10 +5,10 @@ import (
 
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	pmapper "github.com/ava-labs/avalanche-rosetta/mapper/pchain"
-	"github.com/ava-labs/avalanche-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	pmapper "github.com/MetalBlockchain/metal-rosetta/mapper/pchain"
+	"github.com/MetalBlockchain/metal-rosetta/service"
 )
 
 // NetworkIdentifier returns P-chain network identifier

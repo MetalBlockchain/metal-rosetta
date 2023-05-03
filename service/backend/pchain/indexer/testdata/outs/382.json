@@ -37,7 +37,7 @@
             "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
             "output": {
               "addresses": [
-                "P-avax1hjlhzxzszs8nxhz0flnra38jxtvmf38td3qxa6"
+                "P-metal1hjlhzxzszs8nxhz0flnra38jxtvmf38tgjcjzl"
               ],
               "amount": 189998000000,
               "locktime": 0,
@@ -47,7 +47,7 @@
         ],
         "rewardsOwner": {
           "addresses": [
-            "P-avax1hjlhzxzszs8nxhz0flnra38jxtvmf38td3qxa6"
+            "P-metal1hjlhzxzszs8nxhz0flnra38jxtvmf38tgjcjzl"
           ],
           "locktime": 0,
           "threshold": 1

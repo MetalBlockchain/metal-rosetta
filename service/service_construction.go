@@ -11,15 +11,15 @@ import (
 	"github.com/coinbase/rosetta-sdk-go/types"
 	"golang.org/x/crypto/sha3"
 
-	ethtypes "github.com/ava-labs/coreth/core/types"
-	"github.com/ava-labs/coreth/interfaces"
+	ethtypes "github.com/MetalBlockchain/coreth/core/types"
+	"github.com/MetalBlockchain/coreth/interfaces"
 	ethcommon "github.com/ethereum/go-ethereum/common"
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	ethcrypto "github.com/ethereum/go-ethereum/crypto"
 
-	"github.com/ava-labs/avalanche-rosetta/client"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/client"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
 )
 
 const (

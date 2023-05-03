@@ -8,24 +8,24 @@ import (
 	"strings"
 	"time"
 
-	avaConst "github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/vms/platformvm/stakeable"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	avaConst "github.com/MetalBlockchain/metalgo/utils/constants"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/stakeable"
+	"github.com/MetalBlockchain/metalgo/vms/secp256k1fx"
 	"golang.org/x/exp/slices"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	pmapper "github.com/ava-labs/avalanche-rosetta/mapper/pchain"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/common"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	pmapper "github.com/MetalBlockchain/metal-rosetta/mapper/pchain"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/common"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/ava-labs/avalanchego/utils/math"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/utils/formatting/address"
+	"github.com/MetalBlockchain/metalgo/utils/math"
+	"github.com/MetalBlockchain/metalgo/utils/set"
+	"github.com/MetalBlockchain/metalgo/vms/components/avax"
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	"github.com/ava-labs/avalanche-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/service"
 )
 
 var (
@@ -290,7 +290,7 @@ func (b *Backend) fetchBalance(ctx context.Context, addrString string, fetchImpo
 
 // Copy of the platformvm service's GetBalance implementation.
 // This is needed as multisig UTXOs are cleaned in parseUTXOs and its output must be used for the calculations. Ref:
-// https://github.com/ava-labs/avalanchego/blob/0950acab667e0c16a55e9a9bb72bcbe25c3b88cf/vms/platformvm/service.go#L184
+// https://github.com/MetalBlockchain/metalgo/blob/0950acab667e0c16a55e9a9bb72bcbe25c3b88cf/vms/platformvm/service.go#L184
 func (b *Backend) getBalancesWithoutMultisig(utxos []avax.UTXO) (*AccountBalance, error) {
 	currentTime := uint64(time.Now().Unix())
 

@@ -6,20 +6,20 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ava-labs/avalanchego/codec"
-	"github.com/ava-labs/avalanchego/genesis"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/hashing"
+	"github.com/MetalBlockchain/metalgo/codec"
+	"github.com/MetalBlockchain/metalgo/genesis"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/snow"
+	"github.com/MetalBlockchain/metalgo/utils/constants"
+	"github.com/MetalBlockchain/metalgo/utils/hashing"
 
-	pBlocks "github.com/ava-labs/avalanchego/vms/platformvm/blocks"
-	pGenesis "github.com/ava-labs/avalanchego/vms/platformvm/genesis"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
-	proposerBlk "github.com/ava-labs/avalanchego/vms/proposervm/block"
+	pBlocks "github.com/MetalBlockchain/metalgo/vms/platformvm/blocks"
+	pGenesis "github.com/MetalBlockchain/metalgo/vms/platformvm/genesis"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/txs"
+	proposerBlk "github.com/MetalBlockchain/metalgo/vms/proposervm/block"
 
-	"github.com/ava-labs/avalanche-rosetta/client"
-	rosConst "github.com/ava-labs/avalanche-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/client"
+	rosConst "github.com/MetalBlockchain/metal-rosetta/constants"
 )
 
 var (
@@ -203,6 +203,7 @@ func (p *parser) parseProposerBlock(blkBytes []byte) (*ParsedBlock, error) {
 	proposerTime := noProposerTime
 
 	proBlk, err := proposerBlk.Parse(blkBytes)
+
 	if err == nil {
 		// inner proposerVM bytes, to be parsed as P-chain block
 		pChainBlkBytes = proBlk.Block()
@@ -221,6 +222,7 @@ func (p *parser) parsePChainBlock(pChainBlkBytes []byte, proposerTime time.Time)
 	if err != nil {
 		return nil, fmt.Errorf("unmarshaling block bytes errored with %w", err)
 	}
+
 	txes := blk.Txs()
 	if txes == nil {
 		txes = []*txs.Tx{}

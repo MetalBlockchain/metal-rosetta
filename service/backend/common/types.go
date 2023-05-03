@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/MetalBlockchain/metalgo/ids"
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
 )
 
 var ErrNoTxGiven = errors.New("no transaction was given")

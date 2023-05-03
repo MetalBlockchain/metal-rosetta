@@ -5,15 +5,15 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/ava-labs/avalanchego/api"
-	"github.com/ava-labs/avalanchego/utils/math"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
+	"github.com/MetalBlockchain/metalgo/api"
+	"github.com/MetalBlockchain/metalgo/utils/math"
+	"github.com/MetalBlockchain/metalgo/vms/components/avax"
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	"github.com/ava-labs/avalanche-rosetta/service"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/common"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/common"
 )
 
 var (

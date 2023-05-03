@@ -1,7 +1,7 @@
 package pchain
 
 import (
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/txs"
 	"github.com/coinbase/rosetta-sdk-go/types"
 )
 

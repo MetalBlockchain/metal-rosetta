@@ -3,7 +3,7 @@ package cchainatomictx
 import (
 	"math/big"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/MetalBlockchain/metalgo/ids"
 )
 
 const (

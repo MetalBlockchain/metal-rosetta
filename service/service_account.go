@@ -12,10 +12,10 @@ import (
 	ethcommon "github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 
-	"github.com/ava-labs/coreth/interfaces"
+	"github.com/MetalBlockchain/coreth/interfaces"
 
-	"github.com/ava-labs/avalanche-rosetta/client"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/client"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
 )
 
 // AccountBackend represents a backend that implements /account family of apis for a subset of requests.
@@ -116,7 +116,7 @@ func (s AccountService) AccountBalance(
 				balances = append(balances, mapper.AvaxAmount(avaxBalance))
 				continue
 			}
-			return nil, WrapError(ErrCallInvalidParams, errors.New("non-avax currencies must specify contractAddress in metadata"))
+			return nil, WrapError(ErrCallInvalidParams, errors.New("non-metal currencies must specify contractAddress in metadata"))
 		}
 
 		identifierAddress := req.AccountIdentifier.Address

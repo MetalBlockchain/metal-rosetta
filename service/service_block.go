@@ -5,17 +5,17 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/MetalBlockchain/metalgo/ids"
 	"github.com/coinbase/rosetta-sdk-go/server"
 	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/coinbase/rosetta-sdk-go/utils"
 
-	corethTypes "github.com/ava-labs/coreth/core/types"
+	corethTypes "github.com/MetalBlockchain/coreth/core/types"
 	ethcommon "github.com/ethereum/go-ethereum/common"
 
-	"github.com/ava-labs/avalanche-rosetta/client"
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/client"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
 )
 
 // BlockBackend represents a backend that implements /block family of apis for a subset of requests

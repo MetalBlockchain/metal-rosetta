@@ -8,24 +8,24 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/ids"
-	avaConst "github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/formatting"
+	"github.com/MetalBlockchain/metalgo/ids"
+	avaConst "github.com/MetalBlockchain/metalgo/utils/constants"
+	"github.com/MetalBlockchain/metalgo/utils/formatting"
 	"github.com/coinbase/rosetta-sdk-go/types"
 	ethcommon "github.com/ethereum/go-ethereum/common"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	mocks "github.com/ava-labs/avalanche-rosetta/mocks/client"
-	"github.com/ava-labs/avalanche-rosetta/service"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/common"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	mocks "github.com/MetalBlockchain/metal-rosetta/mocks/client"
+	"github.com/MetalBlockchain/metal-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/common"
 )
 
 var (
 	networkIdentifier = &types.NetworkIdentifier{
 		Blockchain: service.BlockchainName,
-		Network:    constants.FujiNetwork,
+		Network:    constants.TahoeNetwork,
 	}
 
 	cAccountIdentifier       = &types.AccountIdentifier{Address: "0x3158e80abD5A1e1aa716003C9Db096792C379621"}
@@ -35,9 +35,9 @@ var (
 	cChainID, _ = ids.FromString("yH8D7ThNJkxmtkuv2jgBa4P1Rn3Qpr4pPr7QYNfcdoS6k6HWp")
 	pChainID    = ids.Empty
 
-	avalancheNetworkID = avaConst.FujiID
+	avalancheNetworkID = avaConst.TahoeID
 
-	avaxAssetID, _ = ids.FromString("U8iRqJoiJm8xZHAacmvYyZVwqQx6uDNtQeP3CQ6fcgQk3JqnK")
+	avaxAssetID, _ = ids.FromString("2QpCJwPk3nzi1VqJEuaFA44WM2UUzraBXQyH6jMGLTLQhqoe4n")
 )
 
 func buildRosettaSignerJSON(coinIdentifiers []string, signers []*types.AccountIdentifier) string {

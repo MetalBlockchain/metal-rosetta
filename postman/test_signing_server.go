@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/ava-labs/avalanchego/utils/cb58"
-	"github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
+	"github.com/MetalBlockchain/metalgo/utils/cb58"
+	"github.com/MetalBlockchain/metalgo/utils/crypto/secp256k1"
 	"github.com/coinbase/rosetta-sdk-go/types"
 )
 

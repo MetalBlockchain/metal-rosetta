@@ -9,24 +9,24 @@ import (
 	"math/big"
 	"net/http"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/MetalBlockchain/metalgo/ids"
 	"github.com/coinbase/rosetta-sdk-go/asserter"
 	"github.com/coinbase/rosetta-sdk-go/server"
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/client"
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	"github.com/ava-labs/avalanche-rosetta/service"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/cchainatomictx"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/pchain"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/pchain/indexer"
+	"github.com/MetalBlockchain/metal-rosetta/client"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/cchainatomictx"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/pchain"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/pchain/indexer"
 
-	pmapper "github.com/ava-labs/avalanche-rosetta/mapper/pchain"
+	pmapper "github.com/MetalBlockchain/metal-rosetta/mapper/pchain"
 )
 
 var (
-	cmdName    = "avalanche-rosetta"
+	cmdName    = "metal-rosetta"
 	cmdVersion = service.MiddlewareVersion
 )
 
@@ -96,9 +96,9 @@ func main() {
 	case constants.MainnetChainID:
 		assetID = constants.MainnetAssetID
 		AP5Activation = constants.MainnetAP5Activation.Uint64()
-	case constants.FujiChainID:
-		assetID = constants.FujiAssetID
-		AP5Activation = constants.FujiAP5Activation.Uint64()
+	case constants.TahoeChainID:
+		assetID = constants.TahoeAssetID
+		AP5Activation = constants.TahoeAP5Activation.Uint64()
 	default:
 		log.Fatal("invalid ChainID:", cfg.ChainID)
 	}
@@ -184,7 +184,7 @@ func main() {
 	router := server.CorsMiddleware(handler)
 
 	log.Printf(
-		`using avax (chain=%q chainid="%d" network=%q) rpc endpoint: %v`,
+		`using metal (chain=%q chainid="%d" network=%q) rpc endpoint: %v`,
 		service.BlockchainName,
 		cfg.ChainID,
 		cfg.NetworkName,

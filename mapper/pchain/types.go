@@ -1,12 +1,12 @@
 package pchain
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/MetalBlockchain/metalgo/ids"
 )
 
 const (
-	OpImportAvax                 = "IMPORT_AVAX"
-	OpExportAvax                 = "EXPORT_AVAX"
+	OpImportMetal                = "IMPORT_METAL"
+	OpExportMetal                = "EXPORT_METAL"
 	OpAddValidator               = "ADD_VALIDATOR"
 	OpAddPermissionlessValidator = "ADD_PERMISSIONLESS_VALIDATOR"
 	OpAddDelegator               = "ADD_DELEGATOR"
@@ -48,8 +48,8 @@ const (
 
 var (
 	OperationTypes = []string{
-		OpImportAvax,
-		OpExportAvax,
+		OpImportMetal,
+		OpExportMetal,
 		OpAddValidator,
 		OpAddDelegator,
 		OpRewardValidator,

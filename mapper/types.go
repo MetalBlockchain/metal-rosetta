@@ -52,12 +52,12 @@ var (
 	}
 
 	AvaxCurrency = &types.Currency{
-		Symbol:   "AVAX",
+		Symbol:   "METAL",
 		Decimals: 18,
 	}
 
 	AtomicAvaxCurrency = &types.Currency{
-		Symbol:   "AVAX",
+		Symbol:   "METAL",
 		Decimals: 9,
 	}
 

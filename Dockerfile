@@ -3,14 +3,14 @@
 # ------------------------------------------------------------------------------
 FROM golang:1.19.6 AS avalanche
 
-ARG AVALANCHE_VERSION
+ARG METAL_VERSION
 
-RUN git clone https://github.com/ava-labs/avalanchego.git \
-  /go/src/github.com/ava-labs/avalanchego
+RUN git clone https://github.com/MetalBlockchain/metalgo.git \
+  /go/src/github.com/!metal!blockchain/metalgo
 
-WORKDIR /go/src/github.com/ava-labs/avalanchego
+WORKDIR /go/src/github.com/!metal!blockchain/metalgo
 
-RUN git checkout $AVALANCHE_VERSION && \
+RUN git checkout $METAL_VERSION && \
     ./scripts/build.sh
 
 # ------------------------------------------------------------------------------
@@ -20,10 +20,10 @@ FROM golang:1.19.6 AS rosetta
 
 ARG ROSETTA_VERSION
 
-RUN git clone https://github.com/ava-labs/avalanche-rosetta.git \
-  /go/src/github.com/ava-labs/avalanche-rosetta
+RUN git clone https://github.com/MetalBlockchain/metal-rosetta.git \
+  /go/src/github.com/!metal!blockchain/metal-rosetta
 
-WORKDIR /go/src/github.com/ava-labs/avalanche-rosetta
+WORKDIR /go/src/github.com/!metal!blockchain/metal-rosetta
 
 ENV CGO_ENABLED=1
 ENV GOARCH=amd64

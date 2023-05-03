@@ -4,22 +4,22 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/ava-labs/avalanchego/vms/avm"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/platformvm"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/utils/formatting/address"
+	"github.com/MetalBlockchain/metalgo/vms/avm"
+	"github.com/MetalBlockchain/metalgo/vms/components/avax"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm"
+	"github.com/MetalBlockchain/metalgo/vms/secp256k1fx"
 	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	pmapper "github.com/ava-labs/avalanche-rosetta/mapper/pchain"
-	mocks "github.com/ava-labs/avalanche-rosetta/mocks/client"
-	idxmocks "github.com/ava-labs/avalanche-rosetta/mocks/service/backend/pchain/indexer"
-	"github.com/ava-labs/avalanche-rosetta/service"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/pchain/indexer"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	pmapper "github.com/MetalBlockchain/metal-rosetta/mapper/pchain"
+	mocks "github.com/MetalBlockchain/metal-rosetta/mocks/client"
+	idxmocks "github.com/MetalBlockchain/metal-rosetta/mocks/service/backend/pchain/indexer"
+	"github.com/MetalBlockchain/metal-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/pchain/indexer"
 )
 
 type utxo struct {
@@ -89,7 +89,7 @@ func TestAccountBalance(t *testing.T) {
 			ctx,
 			&types.AccountBalanceRequest{
 				NetworkIdentifier: &types.NetworkIdentifier{
-					Network: constants.FujiNetwork,
+					Network: constants.TahoeNetwork,
 					SubNetworkIdentifier: &types.SubNetworkIdentifier{
 						Network: constants.PChain.String(),
 					},
@@ -139,7 +139,7 @@ func TestAccountBalance(t *testing.T) {
 			ctx,
 			&types.AccountBalanceRequest{
 				NetworkIdentifier: &types.NetworkIdentifier{
-					Network: constants.FujiNetwork,
+					Network: constants.TahoeNetwork,
 					SubNetworkIdentifier: &types.SubNetworkIdentifier{
 						Network: constants.PChain.String(),
 					},
@@ -186,7 +186,7 @@ func TestAccountBalance(t *testing.T) {
 			ctx,
 			&types.AccountBalanceRequest{
 				NetworkIdentifier: &types.NetworkIdentifier{
-					Network: constants.FujiNetwork,
+					Network: constants.TahoeNetwork,
 					SubNetworkIdentifier: &types.SubNetworkIdentifier{
 						Network: constants.PChain.String(),
 					},
@@ -269,7 +269,7 @@ func TestAccountPendingRewardsBalance(t *testing.T) {
 			ctx,
 			&types.AccountBalanceRequest{
 				NetworkIdentifier: &types.NetworkIdentifier{
-					Network: constants.FujiNetwork,
+					Network: constants.TahoeNetwork,
 					SubNetworkIdentifier: &types.SubNetworkIdentifier{
 						Network: constants.PChain.String(),
 					},
@@ -315,7 +315,7 @@ func TestAccountPendingRewardsBalance(t *testing.T) {
 			ctx,
 			&types.AccountBalanceRequest{
 				NetworkIdentifier: &types.NetworkIdentifier{
-					Network: constants.FujiNetwork,
+					Network: constants.TahoeNetwork,
 					SubNetworkIdentifier: &types.SubNetworkIdentifier{
 						Network: constants.PChain.String(),
 					},
@@ -395,7 +395,7 @@ func TestAccountCoins(t *testing.T) {
 			ctx,
 			&types.AccountCoinsRequest{
 				NetworkIdentifier: &types.NetworkIdentifier{
-					Network: constants.FujiNetwork,
+					Network: constants.TahoeNetwork,
 					SubNetworkIdentifier: &types.SubNetworkIdentifier{
 						Network: constants.PChain.String(),
 					},
@@ -466,7 +466,7 @@ func TestAccountCoins(t *testing.T) {
 			ctx,
 			&types.AccountCoinsRequest{
 				NetworkIdentifier: &types.NetworkIdentifier{
-					Network: constants.FujiNetwork,
+					Network: constants.TahoeNetwork,
 					SubNetworkIdentifier: &types.SubNetworkIdentifier{
 						Network: constants.PChain.String(),
 					},

@@ -3,20 +3,20 @@ package cchainatomictx
 import (
 	"testing"
 
-	"github.com/ava-labs/coreth/plugin/evm"
+	"github.com/MetalBlockchain/coreth/plugin/evm"
 	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	cmapper "github.com/ava-labs/avalanche-rosetta/mapper/cchainatomictx"
-	"github.com/ava-labs/avalanche-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	cmapper "github.com/MetalBlockchain/metal-rosetta/mapper/cchainatomictx"
+	"github.com/MetalBlockchain/metal-rosetta/service"
 )
 
 func TestShouldHandleRequest(t *testing.T) {
 	cChainNetworkIdentifier := &types.NetworkIdentifier{
 		Blockchain: service.BlockchainName,
-		Network:    constants.FujiNetwork,
+		Network:    constants.TahoeNetwork,
 	}
 
 	bech32AccountIdentifier := &types.AccountIdentifier{Address: "C-avax1us3us4s4mv0g85vxjm8va04ewdl27wcwnqwejf"}

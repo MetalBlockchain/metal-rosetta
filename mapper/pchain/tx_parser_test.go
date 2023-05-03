@@ -4,19 +4,19 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/utils/constants"
+	"github.com/MetalBlockchain/metalgo/vms/components/avax"
 	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/stretchr/testify/assert"
 
-	rosConst "github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	mocks "github.com/ava-labs/avalanche-rosetta/mocks/client"
+	rosConst "github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	mocks "github.com/MetalBlockchain/metal-rosetta/mocks/client"
 )
 
 var (
-	avaxAssetID, _ = ids.FromString("U8iRqJoiJm8xZHAacmvYyZVwqQx6uDNtQeP3CQ6fcgQk3JqnK")
+	avaxAssetID, _ = ids.FromString("2QpCJwPk3nzi1VqJEuaFA44WM2UUzraBXQyH6jMGLTLQhqoe4n")
 	cChainID, _    = ids.FromString("yH8D7ThNJkxmtkuv2jgBa4P1Rn3Qpr4pPr7QYNfcdoS6k6HWp")
 	chainIDs       = map[ids.ID]rosConst.ChainIDAlias{
 		ids.Empty: rosConst.PChain,
@@ -34,7 +34,7 @@ func TestMapInOperation(t *testing.T) {
 
 	parserCfg := TxParserConfig{
 		IsConstruction: false,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 		AvaxAssetID:    avaxAssetID,
 		PChainClient:   pchainClient,
@@ -82,7 +82,7 @@ func TestMapNonAvaxTransactionInConstruction(t *testing.T) {
 
 	parserCfg := TxParserConfig{
 		IsConstruction: true,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 
 		// passing empty as AVAX id, so that
@@ -92,7 +92,7 @@ func TestMapNonAvaxTransactionInConstruction(t *testing.T) {
 	}
 	parser, _ := NewTxParser(parserCfg, inputAccounts, nil)
 	inOps := newTxOps(true)
-	err := parser.insToOperations(inOps, OpImportAvax, []*avax.TransferableInput{avaxIn}, OpTypeInput)
+	err := parser.insToOperations(inOps, OpImportMetal, []*avax.TransferableInput{avaxIn}, OpTypeInput)
 	assert.ErrorIs(t, errUnsupportedAssetInConstruction, err)
 }
 
@@ -106,7 +106,7 @@ func TestMapOutOperation(t *testing.T) {
 
 	parserCfg := TxParserConfig{
 		IsConstruction: true,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 		AvaxAssetID:    avaxAssetID,
 		PChainClient:   pchainClient,
@@ -139,7 +139,7 @@ func TestMapAddValidatorTx(t *testing.T) {
 
 	parserCfg := TxParserConfig{
 		IsConstruction: true,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 		AvaxAssetID:    avaxAssetID,
 		PChainClient:   pchainClient,
@@ -168,7 +168,7 @@ func TestMapAddDelegatorTx(t *testing.T) {
 
 	parserCfg := TxParserConfig{
 		IsConstruction: true,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 		AvaxAssetID:    avaxAssetID,
 		PChainClient:   pchainClient,
@@ -215,7 +215,7 @@ func TestMapImportTx(t *testing.T) {
 
 	parserCfg := TxParserConfig{
 		IsConstruction: true,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 		AvaxAssetID:    avaxAssetID,
 		PChainClient:   pchainClient,
@@ -227,7 +227,7 @@ func TestMapImportTx(t *testing.T) {
 	total := len(importTx.Ins) + len(importTx.Outs) + len(importTx.ImportedInputs) - 2 // - 1 for the multisig output
 	assert.Equal(t, total, len(rosettaTransaction.Operations))
 
-	cntTxType, cntInputMeta, cntOutputMeta, cntMetaType := verifyRosettaTransaction(rosettaTransaction.Operations, OpImportAvax, OpTypeImport)
+	cntTxType, cntInputMeta, cntOutputMeta, cntMetaType := verifyRosettaTransaction(rosettaTransaction.Operations, OpImportMetal, OpTypeImport)
 
 	assert.Equal(t, 2, cntTxType)
 	assert.Equal(t, 0, cntInputMeta)
@@ -247,7 +247,7 @@ func TestMapNonConstructionImportTx(t *testing.T) {
 
 	parserCfg := TxParserConfig{
 		IsConstruction: false,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 		AvaxAssetID:    avaxAssetID,
 		PChainClient:   pchainClient,
@@ -259,7 +259,7 @@ func TestMapNonConstructionImportTx(t *testing.T) {
 	total := len(importTx.Ins) + len(importTx.Outs) + len(importTx.ImportedInputs) - 3 // - 1 for the multisig output
 	assert.Equal(t, total, len(rosettaTransaction.Operations))
 
-	cntTxType, cntInputMeta, cntOutputMeta, cntMetaType := verifyRosettaTransaction(rosettaTransaction.Operations, OpImportAvax, OpTypeImport)
+	cntTxType, cntInputMeta, cntOutputMeta, cntMetaType := verifyRosettaTransaction(rosettaTransaction.Operations, OpImportMetal, OpTypeImport)
 
 	assert.Equal(t, 1, cntTxType)
 	assert.Equal(t, 0, cntInputMeta)
@@ -275,7 +275,7 @@ func TestMapNonConstructionImportTx(t *testing.T) {
 	importedInput := importTx.ImportedInputs[0]
 	expectedImportedInputs := []*types.Operation{{
 		OperationIdentifier: &types.OperationIdentifier{Index: 1},
-		Type:                OpImportAvax,
+		Type:                OpImportMetal,
 		Status:              types.String(mapper.StatusSuccess),
 		Account:             nil,
 		Amount:              mapper.AtomicAvaxAmount(big.NewInt(-int64(importedInput.Input().Amount()))),
@@ -301,7 +301,7 @@ func TestMapExportTx(t *testing.T) {
 
 	parserCfg := TxParserConfig{
 		IsConstruction: true,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 		AvaxAssetID:    avaxAssetID,
 		PChainClient:   pchainClient,
@@ -313,7 +313,7 @@ func TestMapExportTx(t *testing.T) {
 	total := len(exportTx.Ins) + len(exportTx.Outs) + len(exportTx.ExportedOutputs)
 	assert.Equal(t, total, len(rosettaTransaction.Operations))
 
-	cntTxType, cntInputMeta, cntOutputMeta, cntMetaType := verifyRosettaTransaction(rosettaTransaction.Operations, OpExportAvax, OpTypeExport)
+	cntTxType, cntInputMeta, cntOutputMeta, cntMetaType := verifyRosettaTransaction(rosettaTransaction.Operations, OpExportMetal, OpTypeExport)
 
 	assert.Equal(t, 3, cntTxType)
 	assert.Equal(t, 1, cntInputMeta)
@@ -330,7 +330,7 @@ func TestMapNonConstructionExportTx(t *testing.T) {
 
 	parserCfg := TxParserConfig{
 		IsConstruction: false,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 		AvaxAssetID:    avaxAssetID,
 		PChainClient:   pchainClient,
@@ -342,7 +342,7 @@ func TestMapNonConstructionExportTx(t *testing.T) {
 	total := len(exportTx.Ins) + len(exportTx.Outs)
 	assert.Equal(t, total, len(rosettaTransaction.Operations))
 
-	cntTxType, cntInputMeta, cntOutputMeta, cntMetaType := verifyRosettaTransaction(rosettaTransaction.Operations, OpExportAvax, OpTypeExport)
+	cntTxType, cntInputMeta, cntOutputMeta, cntMetaType := verifyRosettaTransaction(rosettaTransaction.Operations, OpExportMetal, OpTypeExport)
 
 	assert.Equal(t, 2, cntTxType)
 	assert.Equal(t, 1, cntInputMeta)
@@ -351,7 +351,7 @@ func TestMapNonConstructionExportTx(t *testing.T) {
 
 	txType, ok := rosettaTransaction.Metadata[MetadataTxType].(string)
 	assert.True(t, ok)
-	assert.Equal(t, OpExportAvax, txType)
+	assert.Equal(t, OpExportMetal, txType)
 
 	// Verify that export output are properly generated
 	exportOutputs, ok := rosettaTransaction.Metadata[mapper.MetadataExportedOutputs].([]*types.Operation)
@@ -360,7 +360,7 @@ func TestMapNonConstructionExportTx(t *testing.T) {
 	// setting isConstruction to true in order to include exported output in the operations
 	parserCfg = TxParserConfig{
 		IsConstruction: true,
-		Hrp:            constants.FujiHRP,
+		Hrp:            constants.TahoeHRP,
 		ChainIDs:       chainIDs,
 		AvaxAssetID:    avaxAssetID,
 		PChainClient:   pchainClient,

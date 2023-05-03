@@ -1,9 +1,9 @@
 package indexer
 
 import (
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/vms/platformvm/genesis"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/genesis"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/txs"
 )
 
 // ParsedBlock contains block details parsed from indexer containers

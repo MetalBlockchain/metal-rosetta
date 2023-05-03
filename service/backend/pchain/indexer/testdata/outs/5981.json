@@ -15,7 +15,7 @@
             "fxID": "spdxUxVJQbX85MGxMHbKw1sHxMnSqJ3QBzDyDYEP3h6TLuxqQ",
             "output": {
               "addresses": [
-                "P-avax13gfmq9cuw5ph2ce67fusfd6gtp0awln7px5mh7"
+                "P-metal13gfmq9cuw5ph2ce67fusfd6gtp0awln7y9v0gm"
               ],
               "amount": 1040000,
               "locktime": 0,
@@ -52,8 +52,8 @@
         "memo": "0x",
         "owner": {
           "addresses": [
-            "P-avax1fuuttly42kw7hdnlwc5sr2mqeajvcf7ejmscyr",
-            "P-avax13gfmq9cuw5ph2ce67fusfd6gtp0awln7px5mh7"
+            "P-metal1fuuttly42kw7hdnlwc5sr2mqeajvcf7ehcgvmx",
+            "P-metal13gfmq9cuw5ph2ce67fusfd6gtp0awln7y9v0gm"
           ],
           "locktime": 0,
           "threshold": 2

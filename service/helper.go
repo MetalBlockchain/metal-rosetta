@@ -7,9 +7,9 @@ import (
 
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/client"
+	"github.com/MetalBlockchain/metal-rosetta/client"
 
-	ethtypes "github.com/ava-labs/coreth/core/types"
+	ethtypes "github.com/MetalBlockchain/coreth/core/types"
 	ethcommon "github.com/ethereum/go-ethereum/common"
 )
 

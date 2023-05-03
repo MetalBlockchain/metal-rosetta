@@ -33,7 +33,7 @@ Before you start running the server you need to create a configuration file:
 
 ```json
 {
-  "rpc_base_url": "https://api.avax-test.network",
+  "rpc_base_url": "https://api.metalblockchain.org",
   "mode": "online",
   "listen_addr": "0.0.0.0:8080",
   "genesis_block_hash" :"0x31ced5b9beb7f8782b014660da0cb18cc409f121f408186886e1ca3e8eeca96b",
@@ -170,5 +170,5 @@ BSD 3-Clause
 [1]: https://www.rosetta-api.org/
 [2]: https://www.avalabs.org/
 [3]: https://github.com/ava-labs/avalanchego
-[4]: https://docs.avax.network/build/avalanchego-apis
-[5]: https://docs.avax.network/build/tools/public-api
+[4]: https://docs.metalblockchain.org/build/avalanchego-apis
+[5]: https://docs.metalblockchain.org/build/tools/public-api

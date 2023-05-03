@@ -8,17 +8,17 @@ import (
 	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	mocks "github.com/ava-labs/avalanche-rosetta/mocks/client"
-	idxmocks "github.com/ava-labs/avalanche-rosetta/mocks/service/backend/pchain/indexer"
-	"github.com/ava-labs/avalanche-rosetta/service"
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	mocks "github.com/MetalBlockchain/metal-rosetta/mocks/client"
+	idxmocks "github.com/MetalBlockchain/metal-rosetta/mocks/service/backend/pchain/indexer"
+	"github.com/MetalBlockchain/metal-rosetta/service"
+	"github.com/MetalBlockchain/metalgo/ids"
 )
 
 func TestShouldHandleRequest(t *testing.T) {
 	pChainNetworkIdentifier := &types.NetworkIdentifier{
 		Blockchain: service.BlockchainName,
-		Network:    constants.FujiNetwork,
+		Network:    constants.TahoeNetwork,
 		SubNetworkIdentifier: &types.SubNetworkIdentifier{
 			Network: constants.PChain.String(),
 		},
@@ -26,7 +26,7 @@ func TestShouldHandleRequest(t *testing.T) {
 
 	cChainNetworkIdentifier := &types.NetworkIdentifier{
 		Blockchain: service.BlockchainName,
-		Network:    constants.FujiNetwork,
+		Network:    constants.TahoeNetwork,
 	}
 
 	ctx := context.Background()

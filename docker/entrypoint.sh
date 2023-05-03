@@ -1,15 +1,15 @@
 #!/bin/bash
 
-export AVALANCHE_NETWORK=${AVALANCHE_NETWORK:-testnet}
-export AVALANCHE_CHAIN=${AVALANCHE_CHAIN:-43113}
-export AVALANCHE_MODE=${AVALANCHE_MODE:-online}
+export METAL_NETWORK=${METAL_NETWORK:-testnet}
+export METAL_CHAIN=${METAL_CHAIN:-43113}
+export METAL_MODE=${METAL_MODE:-online}
 export AVALANCHE_GENESIS_HASH=${AVALANCHE_GENESIS_HASH:-"0x31ced5b9beb7f8782b014660da0cb18cc409f121f408186886e1ca3e8eeca96b"}
 export AVALANCHEGO_RPC_BASE_URL=${AVALANCHEGO_RPC_BASE_URL:-"http://localhost:9650"}
 export AVALANCHEGO_INDEXER_BASE_URL=${AVALANCHEGO_INDEXER_BASE_URL:-$AVALANCHEGO_RPC_BASE_URL}
 
 cat <<EOF > /app/avalanchego-config.json
 {
-  "network-id": "$AVALANCHE_NETWORK",
+  "network-id": "$METAL_NETWORK",
   "http-host": "0.0.0.0",
   "api-keystore-enabled": false,
   "api-admin-enabled": false,
@@ -38,13 +38,13 @@ EOF
 
 cat <<EOF > /app/rosetta-config.json
 {
-  "mode": "$AVALANCHE_MODE",
+  "mode": "$METAL_MODE",
   "rpc_base_url": "$AVALANCHEGO_RPC_BASE_URL",
   "indexer_base_url": "$AVALANCHEGO_INDEXER_BASE_URL",
   "listen_addr": "0.0.0.0:8080",
   "network_id": 1,
-  "network_name": "$AVALANCHE_NETWORK",
-  "chain_id": $AVALANCHE_CHAIN,
+  "network_name": "$METAL_NETWORK",
+  "chain_id": $METAL_CHAIN,
   "genesis_block_hash": "$AVALANCHE_GENESIS_HASH"
 }
 EOF
@@ -55,7 +55,7 @@ if [ -n "$@" ]; then
 fi
 
 exec /app/rosetta-runner \
-  -mode $AVALANCHE_MODE \
+  -mode $METAL_MODE \
   -avalanche-bin /app/avalanchego \
   -avalanche-config /app/avalanchego-config.json \
   -rosetta-bin /app/rosetta-server \

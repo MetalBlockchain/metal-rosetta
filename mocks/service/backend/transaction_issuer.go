@@ -5,7 +5,7 @@ package chain
 import (
 	context "context"
 
-	ids "github.com/ava-labs/avalanchego/ids"
+	ids "github.com/MetalBlockchain/metalgo/ids"
 	mock "github.com/stretchr/testify/mock"
 )
 

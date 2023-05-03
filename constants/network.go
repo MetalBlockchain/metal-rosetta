@@ -1,21 +1,21 @@
 package constants
 
 import (
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/coreth/params"
+	"github.com/MetalBlockchain/coreth/params"
+	"github.com/MetalBlockchain/metalgo/utils/constants"
 )
 
 const (
-	MainnetChainID = 43114
+	MainnetChainID = 381931
 	MainnetAssetID = "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z"
 	MainnetNetwork = constants.MainnetName
 
-	FujiChainID = 43113
-	FujiAssetID = "U8iRqJoiJm8xZHAacmvYyZVwqQx6uDNtQeP3CQ6fcgQk3JqnK"
-	FujiNetwork = constants.FujiName
+	TahoeChainID = 381932
+	TahoeAssetID = "2QpCJwPk3nzi1VqJEuaFA44WM2UUzraBXQyH6jMGLTLQhqoe4n"
+	TahoeNetwork = constants.TahoeName
 )
 
 var (
-	MainnetAP5Activation = params.AvalancheMainnetChainConfig.ApricotPhase5BlockTimestamp
-	FujiAP5Activation    = params.AvalancheFujiChainConfig.ApricotPhase5BlockTimestamp
+	MainnetAP5Activation = params.MetalMainnetChainConfig.ApricotPhase5BlockTimestamp
+	TahoeAP5Activation   = params.MetalTahoeChainConfig.ApricotPhase5BlockTimestamp
 )

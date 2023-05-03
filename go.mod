@@ -1,10 +1,10 @@
-module github.com/ava-labs/avalanche-rosetta
+module github.com/MetalBlockchain/metal-rosetta
 
 go 1.19
 
 require (
-	github.com/ava-labs/avalanchego v1.10.0
-	github.com/ava-labs/coreth v0.12.0-rc.2
+	github.com/MetalBlockchain/coreth v0.11.9-rc.0
+	github.com/MetalBlockchain/metalgo v1.9.16
 	github.com/coinbase/rosetta-sdk-go v0.6.5
 	github.com/ethereum/go-ethereum v1.10.26
 	github.com/stretchr/testify v1.8.1
@@ -15,9 +15,9 @@ require (
 
 require (
 	github.com/BurntSushi/toml v1.1.0 // indirect
-	github.com/DataDog/zstd v1.5.2 // indirect
 	github.com/NYTimes/gziphandler v1.1.1 // indirect
 	github.com/VictoriaMetrics/fastcache v1.10.0 // indirect
+	github.com/ava-labs/avalanchego v1.10.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/btcsuite/btcd/btcec/v2 v2.3.2 // indirect
 	github.com/btcsuite/btcd/btcutil v1.1.3 // indirect
@@ -27,7 +27,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/deckarep/golang-set v1.8.0 // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.1.0 // indirect
-	github.com/dlclark/regexp2 v1.4.1-0.20201116162257-a2a8dda75c91 // indirect
+	github.com/dlclark/regexp2 v1.7.0 // indirect
 	github.com/dop251/goja v0.0.0-20220405120441-9037c2b61cbf // indirect
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/fjl/memsize v0.0.0-20190710130421-bcb5799ab5e5 // indirect

@@ -7,17 +7,17 @@ import (
 	"log"
 	"math/big"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/platformvm/stakeable"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/utils/formatting/address"
+	"github.com/MetalBlockchain/metalgo/vms/components/avax"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/stakeable"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/txs"
+	"github.com/MetalBlockchain/metalgo/vms/secp256k1fx"
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/client"
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/client"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
 )
 
 var (
@@ -123,10 +123,10 @@ func (t *TxParser) Parse(signedTx *txs.Tx) (*types.Transaction, error) {
 	txID := signedTx.ID()
 	switch unsignedTx := signedTx.Unsigned.(type) {
 	case *txs.ExportTx:
-		txType = OpExportAvax
+		txType = OpExportMetal
 		ops, err = t.parseExportTx(txID, unsignedTx)
 	case *txs.ImportTx:
-		txType = OpImportAvax
+		txType = OpImportMetal
 		ops, err = t.parseImportTx(txID, unsignedTx)
 	case *txs.AddValidatorTx:
 		txType = OpAddValidator
@@ -209,7 +209,7 @@ func addOperationIdentifiers(operations []*types.Operation, startIdx int) []*typ
 }
 
 func (t *TxParser) parseExportTx(txID ids.ID, tx *txs.ExportTx) (*txOps, error) {
-	ops, err := t.baseTxToCombinedOperations(txID, &tx.BaseTx, OpExportAvax)
+	ops, err := t.baseTxToCombinedOperations(txID, &tx.BaseTx, OpExportMetal)
 	if err != nil {
 		return nil, err
 	}
@@ -219,7 +219,7 @@ func (t *TxParser) parseExportTx(txID ids.ID, tx *txs.ExportTx) (*txOps, error) 
 		return nil, errUnknownDestinationChain
 	}
 
-	err = t.outsToOperations(ops, OpExportAvax, txID, tx.ExportedOutputs, OpTypeExport, chainIDAlias)
+	err = t.outsToOperations(ops, OpExportMetal, txID, tx.ExportedOutputs, OpTypeExport, chainIDAlias)
 	if err != nil {
 		return nil, err
 	}
@@ -230,17 +230,17 @@ func (t *TxParser) parseExportTx(txID ids.ID, tx *txs.ExportTx) (*txOps, error) 
 func (t *TxParser) parseImportTx(txID ids.ID, tx *txs.ImportTx) (*txOps, error) {
 	ops := newTxOps(t.cfg.IsConstruction)
 
-	err := t.insToOperations(ops, OpImportAvax, tx.Ins, OpTypeInput)
+	err := t.insToOperations(ops, OpImportMetal, tx.Ins, OpTypeInput)
 	if err != nil {
 		return nil, err
 	}
 
-	err = t.insToOperations(ops, OpImportAvax, tx.ImportedInputs, OpTypeImport)
+	err = t.insToOperations(ops, OpImportMetal, tx.ImportedInputs, OpTypeImport)
 	if err != nil {
 		return nil, err
 	}
 
-	err = t.outsToOperations(ops, OpImportAvax, txID, tx.Outs, OpTypeOutput, constants.PChain)
+	err = t.outsToOperations(ops, OpImportMetal, txID, tx.Outs, OpTypeOutput, constants.PChain)
 	if err != nil {
 		return nil, err
 	}

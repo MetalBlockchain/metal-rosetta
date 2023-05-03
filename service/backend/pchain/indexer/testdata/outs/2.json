@@ -117,7 +117,7 @@
               "locktime": 1607472000,
               "output": {
                 "addresses": [
-                  "P-avax1u6xzj47hp5g0atfx4haadhzp6jah52sngfgdvg"
+                  "P-metal1u6xzj47hp5g0atfx4haadhzp6jah52snd2send"
                 ],
                 "amount": 960150000000,
                 "locktime": 0,
@@ -132,7 +132,7 @@
               "locktime": 1615248000,
               "output": {
                 "addresses": [
-                  "P-avax1u6xzj47hp5g0atfx4haadhzp6jah52sngfgdvg"
+                  "P-metal1u6xzj47hp5g0atfx4haadhzp6jah52snd2send"
                 ],
                 "amount": 960150000000,
                 "locktime": 0,
@@ -147,7 +147,7 @@
               "locktime": 1623024000,
               "output": {
                 "addresses": [
-                  "P-avax1u6xzj47hp5g0atfx4haadhzp6jah52sngfgdvg"
+                  "P-metal1u6xzj47hp5g0atfx4haadhzp6jah52snd2send"
                 ],
                 "amount": 960150000000,
                 "locktime": 0,
@@ -162,7 +162,7 @@
               "locktime": 1630800000,
               "output": {
                 "addresses": [
-                  "P-avax1u6xzj47hp5g0atfx4haadhzp6jah52sngfgdvg"
+                  "P-metal1u6xzj47hp5g0atfx4haadhzp6jah52snd2send"
                 ],
                 "amount": 960150000000,
                 "locktime": 0,
@@ -177,7 +177,7 @@
               "locktime": 1638576000,
               "output": {
                 "addresses": [
-                  "P-avax1u6xzj47hp5g0atfx4haadhzp6jah52sngfgdvg"
+                  "P-metal1u6xzj47hp5g0atfx4haadhzp6jah52snd2send"
                 ],
                 "amount": 960150000000,
                 "locktime": 0,
@@ -192,7 +192,7 @@
               "locktime": 1646352000,
               "output": {
                 "addresses": [
-                  "P-avax1u6xzj47hp5g0atfx4haadhzp6jah52sngfgdvg"
+                  "P-metal1u6xzj47hp5g0atfx4haadhzp6jah52snd2send"
                 ],
                 "amount": 960150000000,
                 "locktime": 0,
@@ -203,7 +203,7 @@
         ],
         "rewardsOwner": {
           "addresses": [
-            "P-avax1u6xzj47hp5g0atfx4haadhzp6jah52sngfgdvg"
+            "P-metal1u6xzj47hp5g0atfx4haadhzp6jah52snd2send"
           ],
           "locktime": 0,
           "threshold": 1

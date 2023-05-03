@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	mocks "github.com/ava-labs/avalanche-rosetta/mocks/service"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	mocks "github.com/MetalBlockchain/metal-rosetta/mocks/service"
 )
 
 func TestAccountBalance(t *testing.T) {
@@ -23,7 +23,7 @@ func TestAccountBalance(t *testing.T) {
 	t.Run("p-chain request is delegated to p-chain backend", func(t *testing.T) {
 		req := &types.AccountBalanceRequest{
 			NetworkIdentifier: &types.NetworkIdentifier{
-				Network: constants.FujiNetwork,
+				Network: constants.TahoeNetwork,
 				SubNetworkIdentifier: &types.SubNetworkIdentifier{
 					Network: constants.PChain.String(),
 				},
@@ -47,7 +47,7 @@ func TestAccountBalance(t *testing.T) {
 	t.Run("c-chain atomic request is delegated to c-chain atomic tx backend", func(t *testing.T) {
 		req := &types.AccountBalanceRequest{
 			NetworkIdentifier: &types.NetworkIdentifier{
-				Network: constants.FujiNetwork,
+				Network: constants.TahoeNetwork,
 			},
 			AccountIdentifier: &types.AccountIdentifier{
 				Address: "C-fuji15f9g0h5xkr5cp47n6u3qxj6yjtzzzrdr23a3tl",
@@ -79,7 +79,7 @@ func TestAccountCoins(t *testing.T) {
 	t.Run("p-chain request is delegated to p-chain backend", func(t *testing.T) {
 		req := &types.AccountCoinsRequest{
 			NetworkIdentifier: &types.NetworkIdentifier{
-				Network: constants.FujiNetwork,
+				Network: constants.TahoeNetwork,
 				SubNetworkIdentifier: &types.SubNetworkIdentifier{
 					Network: constants.PChain.String(),
 				},
@@ -104,7 +104,7 @@ func TestAccountCoins(t *testing.T) {
 	t.Run("c-chain atomic request is delegated to c-chain atomic tx backend", func(t *testing.T) {
 		req := &types.AccountCoinsRequest{
 			NetworkIdentifier: &types.NetworkIdentifier{
-				Network: constants.FujiNetwork,
+				Network: constants.TahoeNetwork,
 			},
 			AccountIdentifier: &types.AccountIdentifier{
 				Address: "C-fuji15f9g0h5xkr5cp47n6u3qxj6yjtzzzrdr23a3tl",
@@ -127,7 +127,7 @@ func TestAccountCoins(t *testing.T) {
 	t.Run("c-chain regular request is not supported", func(t *testing.T) {
 		req := &types.AccountCoinsRequest{
 			NetworkIdentifier: &types.NetworkIdentifier{
-				Network: constants.FujiNetwork,
+				Network: constants.TahoeNetwork,
 			},
 			AccountIdentifier: &types.AccountIdentifier{
 				Address: "0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7",

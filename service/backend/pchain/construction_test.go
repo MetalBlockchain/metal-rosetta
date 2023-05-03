@@ -8,26 +8,26 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/api/info"
-	"github.com/ava-labs/avalanchego/ids"
-	avaConst "github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/formatting"
-	ajson "github.com/ava-labs/avalanchego/utils/json"
+	"github.com/MetalBlockchain/metalgo/api/info"
+	"github.com/MetalBlockchain/metalgo/ids"
+	avaConst "github.com/MetalBlockchain/metalgo/utils/constants"
+	"github.com/MetalBlockchain/metalgo/utils/formatting"
+	ajson "github.com/MetalBlockchain/metalgo/utils/json"
 	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	mocks "github.com/ava-labs/avalanche-rosetta/mocks/client"
-	idxmocks "github.com/ava-labs/avalanche-rosetta/mocks/service/backend/pchain/indexer"
-	"github.com/ava-labs/avalanche-rosetta/service"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/common"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	mocks "github.com/MetalBlockchain/metal-rosetta/mocks/client"
+	idxmocks "github.com/MetalBlockchain/metal-rosetta/mocks/service/backend/pchain/indexer"
+	"github.com/MetalBlockchain/metal-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/common"
 )
 
 var (
 	pChainNetworkIdentifier = &types.NetworkIdentifier{
 		Blockchain: service.BlockchainName,
-		Network:    constants.FujiNetwork,
+		Network:    constants.TahoeNetwork,
 		SubNetworkIdentifier: &types.SubNetworkIdentifier{
 			Network: constants.PChain.String(),
 		},
@@ -42,9 +42,9 @@ var (
 
 	nodeID = "NodeID-Bvsx89JttQqhqdgwtizAPoVSNW74Xcr2S"
 
-	avalancheNetworkID = avaConst.FujiID
+	avalancheNetworkID = avaConst.TahoeID
 
-	avaxAssetID, _ = ids.FromString("U8iRqJoiJm8xZHAacmvYyZVwqQx6uDNtQeP3CQ6fcgQk3JqnK")
+	avaxAssetID, _ = ids.FromString("2QpCJwPk3nzi1VqJEuaFA44WM2UUzraBXQyH6jMGLTLQhqoe4n")
 
 	opTypeInput  = "INPUT"
 	opTypeImport = "IMPORT"

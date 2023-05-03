@@ -7,18 +7,18 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ava-labs/avalanchego/snow"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	pGenesis "github.com/ava-labs/avalanchego/vms/platformvm/genesis"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
+	"github.com/MetalBlockchain/metalgo/snow"
+	"github.com/MetalBlockchain/metalgo/utils/constants"
+	pGenesis "github.com/MetalBlockchain/metalgo/vms/platformvm/genesis"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/txs"
 
-	rosConst "github.com/ava-labs/avalanche-rosetta/constants"
-	mocks "github.com/ava-labs/avalanche-rosetta/mocks/client"
+	rosConst "github.com/MetalBlockchain/metal-rosetta/constants"
+	mocks "github.com/MetalBlockchain/metal-rosetta/mocks/client"
 
-	"github.com/ava-labs/avalanchego/api"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/indexer"
-	"github.com/ava-labs/avalanchego/utils/formatting"
+	"github.com/MetalBlockchain/metalgo/api"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/indexer"
+	"github.com/MetalBlockchain/metalgo/utils/formatting"
 	"github.com/stretchr/testify/assert"
 
 	"github.com/stretchr/testify/mock"
@@ -128,7 +128,7 @@ func TestGenesisBlockParseTxs(t *testing.T) {
 	a := assert.New(t)
 	pchainClient := &mocks.PChainClient{}
 
-	p, err := NewParser(pchainClient, constants.FujiID)
+	p, err := NewParser(pchainClient, constants.TahoeID)
 	if err != nil {
 		panic(err)
 	}
@@ -139,7 +139,7 @@ func TestGenesisBlockParseTxs(t *testing.T) {
 		panic(err)
 	}
 
-	initializeTxCtx(g.Txs, constants.FujiID)
+	initializeTxCtx(g.Txs, constants.TahoeID)
 	j, err := stdjson.MarshalIndent(g, "", "  ")
 	if err != nil {
 		panic(err)

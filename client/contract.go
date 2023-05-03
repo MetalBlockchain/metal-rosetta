@@ -1,8 +1,8 @@
 package client
 
 import (
-	"github.com/ava-labs/avalanchego/cache"
-	"github.com/ava-labs/coreth/ethclient"
+	"github.com/MetalBlockchain/metalgo/cache"
+	"github.com/MetalBlockchain/coreth/ethclient"
 	"github.com/ethereum/go-ethereum/common"
 )
 

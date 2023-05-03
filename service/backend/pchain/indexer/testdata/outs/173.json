@@ -57,7 +57,7 @@
               "locktime": 1630800000,
               "output": {
                 "addresses": [
-                  "P-avax1xq0hmrk395c9mexp0phcly4ua5xd4nveuw6vhs"
+                  "P-metal1xq0hmrk395c9mexp0phcly4ua5xd4nveedzcg4"
                 ],
                 "amount": 2000000000000,
                 "locktime": 0,
@@ -72,7 +72,7 @@
               "locktime": 1630800000,
               "output": {
                 "addresses": [
-                  "P-avax15hqcngf6exffv8sw2asj9qxeq0whc8cwf8ty29"
+                  "P-metal15hqcngf6exffv8sw2asj9qxeq0whc8cwvyns4q"
                 ],
                 "amount": 2000000000000,
                 "locktime": 0,
@@ -83,7 +83,7 @@
         ],
         "rewardsOwner": {
           "addresses": [
-            "P-avax15hqcngf6exffv8sw2asj9qxeq0whc8cwf8ty29"
+            "P-metal15hqcngf6exffv8sw2asj9qxeq0whc8cwvyns4q"
           ],
           "locktime": 0,
           "threshold": 1

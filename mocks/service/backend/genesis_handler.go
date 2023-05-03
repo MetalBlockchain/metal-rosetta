@@ -3,10 +3,10 @@
 package chain
 
 import (
-	indexer "github.com/ava-labs/avalanche-rosetta/service/backend/pchain/indexer"
+	indexer "github.com/MetalBlockchain/metal-rosetta/service/backend/pchain/indexer"
 	mock "github.com/stretchr/testify/mock"
 
-	txs "github.com/ava-labs/avalanchego/vms/platformvm/txs"
+	txs "github.com/MetalBlockchain/metalgo/vms/platformvm/txs"
 
 	types "github.com/coinbase/rosetta-sdk-go/types"
 )

@@ -3,7 +3,7 @@ package service
 import (
 	"fmt"
 
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/MetalBlockchain/metalgo/version"
 )
 
 var NodeVersion = fmt.Sprintf(
@@ -15,5 +15,5 @@ var NodeVersion = fmt.Sprintf(
 
 const (
 	MiddlewareVersion = "0.1.30"
-	BlockchainName    = "Avalanche"
+	BlockchainName    = "Metal"
 )

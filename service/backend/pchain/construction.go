@@ -7,16 +7,16 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
+	"github.com/MetalBlockchain/metalgo/ids"
+	"github.com/MetalBlockchain/metalgo/vms/components/avax"
+	"github.com/MetalBlockchain/metalgo/vms/platformvm/txs"
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
-	pmapper "github.com/ava-labs/avalanche-rosetta/mapper/pchain"
-	"github.com/ava-labs/avalanche-rosetta/service"
-	"github.com/ava-labs/avalanche-rosetta/service/backend/common"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
+	pmapper "github.com/MetalBlockchain/metal-rosetta/mapper/pchain"
+	"github.com/MetalBlockchain/metal-rosetta/service"
+	"github.com/MetalBlockchain/metal-rosetta/service/backend/common"
 )
 
 var (
@@ -63,9 +63,9 @@ func (b *Backend) ConstructionMetadata(
 	var suggestedFee *types.Amount
 	var metadata *pmapper.Metadata
 	switch opMetadata.Type {
-	case pmapper.OpImportAvax:
+	case pmapper.OpImportMetal:
 		metadata, suggestedFee, err = b.buildImportMetadata(ctx, req.Options)
-	case pmapper.OpExportAvax:
+	case pmapper.OpExportMetal:
 		metadata, suggestedFee, err = b.buildExportMetadata(ctx, req.Options)
 	case pmapper.OpAddValidator, pmapper.OpAddDelegator:
 		metadata, suggestedFee, err = b.buildStakingMetadata(req.Options)

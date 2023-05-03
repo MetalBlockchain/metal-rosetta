@@ -1,11 +1,11 @@
 package cchainatomictx
 
 import (
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
+	"github.com/MetalBlockchain/metalgo/utils/formatting/address"
 	"github.com/coinbase/rosetta-sdk-go/types"
 
-	"github.com/ava-labs/avalanche-rosetta/constants"
-	"github.com/ava-labs/avalanche-rosetta/mapper"
+	"github.com/MetalBlockchain/metal-rosetta/constants"
+	"github.com/MetalBlockchain/metal-rosetta/mapper"
 )
 
 // IsCChainBech32Address checks whether a given account identifier contains a C-chain Bech32 type address
