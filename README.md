@@ -1,20 +1,14 @@
-<div align="center">
-  <img src="resources/AvalancheLogoRed.png?raw=true">
-</div>
+# Metal Rosetta
 
----
-
-# Avalanche Rosetta
-
-[Rosetta][1] server implementation for [Avalanche][2] C-Chain.
+[Rosetta][1] server implementation for [Metal][2] C-Chain.
 
 ## Requirements
 
-In order to run the Avalanche Rosetta server you will need access to [Avalanche][3]
+In order to run the Metal Rosetta server you will need access to [Metal][3]
 services via RPC. More info in available APIs found [here][4].
 
-See AvalancheGo documentation on how to run the chain node locally. If you don't run
-the Avalanche node yourself you might use the [hosted API provided by Ava Labs][5].
+See MetalGo documentation on how to run the chain node locally. If you don't run
+the Metal node yourself you might use the [hosted API provided by Ava Labs][5].
 
 ## Installation
 
@@ -55,8 +49,8 @@ Full configuration example:
   "mode": "online",
   "rpc_base_url": "http://localhost:9650",
   "listen_addr": "0.0.0.0:8080",
-  "network_name": "Fuji",
-  "chain_id": 43113,
+  "network_name": "Tahoe",
+  "chain_id": 381932,
   "log_requests": true,
   "genesis_block_hash" :"0x31ced5b9beb7f8782b014660da0cb18cc409f121f408186886e1ca3e8eeca96b",
   "index_unknown_tokens": false,
@@ -72,15 +66,15 @@ Where:
 | Name          | Type    | Default | Description
 |---------------|---------|---------|-------------------------------------------
 | mode          | string  | `online` | Mode of operations. One of: `online`, `offline`
-| rpc_base_url  | string  | `http://localhost:9650` | Avalanche RPC base url
+| rpc_base_url  | string  | `http://localhost:9650` | Metal RPC base url
 | listen_addr   | string  | `http://localhost:8080` | Rosetta server listen address (host/port)
-| network_name  | string  | -       | Avalanche network name
-| chain_id      | integer | -       | Avalanche C-Chain ID
+| network_name  | string  | -       | Metal network name
+| chain_id      | integer | -       | Metal C-Chain ID
 | genesis_block_hash    | string  | -         | The block hash for the genesis block
 | index_unknown_tokens  | bool    | `false`   | Enables ingesting tokens that don't have a public symbol or decimal variable
 | ingestion_mode        | string  | `standard`| Toggles between standard and analytics ingesting modes
 | token_whitelist       |[]string | []        | Enables ingesting for the provided ERC20 contract addresses in standard mode.
-| bridge_tokens         |[]string | []        | Supported Avalanche Bridge tokens. Unwrap function allowed, which initates transfer to ethereum if amount threshold met 
+| bridge_tokens         |[]string | []        | Supported Metal Bridge tokens. Unwrap function allowed, which initates transfer to ethereum if amount threshold met 
 | validate_erc20_whitelist  | bool | `false`  | Verifies provided ERC20 contract addresses in standard mode (node must be bootstrapped when rosetta server starts).
 
 The token whitelist only supports tokens that emit evm transfer logs for all minting (from should be 0x000---), burning (to address should be 0x0000) and transfer events are supported.  All other tokens will break cause ingestion to fail.
@@ -168,7 +162,7 @@ abigen --abi contractInfo.abi --pkg main --type ContractInfoToken --out client/c
 BSD 3-Clause
 
 [1]: https://www.rosetta-api.org/
-[2]: https://www.avalabs.org/
-[3]: https://github.com/ava-labs/avalanchego
-[4]: https://docs.metalblockchain.org/build/avalanchego-apis
+[2]: https://www.metalblockchain.org/
+[3]: https://github.com/MetalBlockchain/metalgo
+[4]: https://docs.metalblockchain.org/build/metalgo-apis
 [5]: https://docs.metalblockchain.org/build/tools/public-api
