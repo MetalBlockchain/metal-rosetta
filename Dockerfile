@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
-# Build avalanche
+# Build metal
 # ------------------------------------------------------------------------------
-FROM golang:1.19.6 AS avalanche
+FROM golang:1.19.6 AS metal
 
 ARG METAL_VERSION
 
@@ -14,7 +14,7 @@ RUN git checkout $METAL_VERSION && \
     ./scripts/build.sh
 
 # ------------------------------------------------------------------------------
-# Build avalanche rosetta
+# Build metal rosetta
 # ------------------------------------------------------------------------------
 FROM golang:1.19.6 AS rosetta
 
@@ -48,24 +48,24 @@ RUN apt-get update -y && \
 
 WORKDIR /app
 
-# Install avalanche daemon
-COPY --from=avalanche \
-  /go/src/github.com/ava-labs/avalanchego/build/avalanchego \
-  /app/avalanchego
+# Install metal daemon
+COPY --from=metal \
+  /go/src/github.com/!metal!blockchain/metalgo/build/metalgo \
+  /app/metalgo
 
 # Install rosetta server
 COPY --from=rosetta \
-  /go/src/github.com/ava-labs/avalanche-rosetta/rosetta-server \
+  /go/src/github.com/!metal!blockchain/metal-rosetta/rosetta-server \
   /app/rosetta-server
 
 # Install rosetta runner
 COPY --from=rosetta \
-  /go/src/github.com/ava-labs/avalanche-rosetta/rosetta-runner \
+  /go/src/github.com/!metal!blockchain/metal-rosetta/rosetta-runner \
   /app/rosetta-runner
 
 # Install service start script
 COPY --from=rosetta \
-  /go/src/github.com/ava-labs/avalanche-rosetta/docker/entrypoint.sh \
+  /go/src/github.com/!metal!blockchain/metal-rosetta/docker/entrypoint.sh \
   /app/entrypoint.sh
 
 EXPOSE 9650
